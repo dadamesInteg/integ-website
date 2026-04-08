@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INTEG Integral Engineering — Electromechanical Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:        #004990;
+    --blue-mid:    #003a75;
+    --blue-dark:   #002a58;
+    --blue-light:  #97c0e6;
+    --blue-pale:   #dcedf8;
+    --gray:        #b6b3b3;
+    --gray-dark:   #7e7c7c;
+    --gray-light:  #f4f4f4;
+    --white:       #ffffff;
+    --text:        #2c2c2c;
+    --text-light:  #5a5a5a;
+    --border:      rgba(0,73,144,0.12);
+    --font-head:   'Montserrat', sans-serif;
+    --font-body:   'Open Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--blue-dark);
+    padding: 6px 48px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar a {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--blue-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .topbar a:hover { color: #fff; }
+  .topbar-sep { color: rgba(151,192,230,0.3); font-size: 10px; }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    box-shadow: 0 2px 16px rgba(0,73,144,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 76px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .logo-name {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--blue);
+  }
+  .logo-sub {
+    font-family: var(--font-head);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+  }
+
+  nav { display: flex; align-items: center; gap: 2px; }
+
+  .nav-item {
+    position: relative;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nav-item:hover { color: var(--blue); background: var(--blue-pale); }
+
+  .nav-item .chevron {
+    display: inline-block;
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0.6;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 230px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 0 0 8px 8px;
+    padding: 8px 0;
+    box-shadow: 0 8px 32px rgba(0,73,144,0.12);
+  }
+  .nav-item:hover .dropdown { display: block; }
+
+  .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .dropdown a::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .dropdown a:hover {
+    color: var(--blue);
+    background: var(--blue-pale);
+    border-left-color: var(--blue);
+  }
+  .dropdown a:hover::before { background: var(--blue); }
+
+  .btn-cta {
+    margin-left: 12px;
+    padding: 10px 24px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+  .btn-cta:hover {
+    background: var(--blue-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,73,144,0.3);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--blue-dark);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, rgba(0,73,144,0.7) 100%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(151,192,230,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(151,192,230,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 42%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(151,192,230,0.07) 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .hero-ring {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    border: 1px solid rgba(151,192,230,0.15);
+    pointer-events: none;
+  }
+  .hero-ring::after {
+    content: '';
+    position: absolute;
+    inset: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(151,192,230,0.1);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 48px;
+    max-width: 680px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: var(--blue-light);
+  }
+
+  h1 {
+    font-family: var(--font-head);
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  h1 strong { color: var(--blue-light); }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(220,237,248,0.85);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    padding: 13px 30px;
+    background: var(--white);
+    color: var(--blue);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--blue-pale);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    padding: 12px 30px;
+    border: 2px solid rgba(151,192,230,0.5);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    border-color: var(--blue-light);
+    background: rgba(151,192,230,0.1);
+  }
+
+  /* STATS STRIP */
+  .stats-strip {
+    background: var(--blue);
+    padding: 28px 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat {
+    text-align: center;
+    padding: 8px 16px;
+    border-right: 1px solid rgba(151,192,230,0.2);
+  }
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+  }
+
+  /* SHARED SECTION */
+  section { padding: 90px 48px; }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 24px; height: 3px;
+    background: var(--blue);
+  }
+
+  h2 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .section-intro {
+    font-size: 15px;
+    color: var(--text-light);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 52px;
+  }
+
+  /* SERVICES */
+  #services { background: var(--gray-light); }
+
+  .services-header { max-width: 1200px; margin: 0 auto 48px; }
+
+  .services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px 36px;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+  }
+  .service-card:hover {
+    box-shadow: 0 8px 32px rgba(0,73,144,0.12);
+    transform: translateY(-3px);
+    border-color: rgba(0,73,144,0.2);
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon-wrap {
+    width: 56px; height: 56px;
+    background: var(--blue-pale);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .service-icon-wrap svg { width: 28px; height: 28px; }
+
+  .service-num {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  h3 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .service-link {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .service-link { gap: 12px; }
+  .service-link::after { content: '→'; font-size: 14px; }
+
+  /* INDUSTRIES */
+  #industries { background: var(--white); }
+
+  .industries-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .industry-card {
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid var(--border);
+  }
+  .industry-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,73,144,0.16);
+  }
+
+  .industry-bg {
+    height: 220px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px 32px;
+  }
+  .industry-bg.healthcare { background: linear-gradient(135deg, #003a75 0%, #004990 60%, #1a6aaa 100%); }
+  .industry-bg.commercial { background: linear-gradient(135deg, #002a58 0%, #003a75 60%, #004990 100%); }
+
+  .industry-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(151,192,230,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(151,192,230,0.07) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .industry-bg-title {
+    position: relative;
+    font-family: var(--font-head);
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    z-index: 1;
+  }
+
+  .industry-body {
+    background: var(--white);
+    padding: 24px 32px;
+  }
+
+  .industry-label {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .industry-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  /* PAST PERFORMANCE */
+  #projects { background: var(--blue-dark); }
+  #projects h2 { color: var(--white); }
+  #projects .section-tag { color: var(--blue-light); }
+  #projects .section-tag::before { background: var(--blue-light); }
+  #projects .section-intro { color: rgba(220,237,248,0.7); }
+
+  .projects-header {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .project-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(151,192,230,0.15);
+    border-radius: 8px;
+    padding: 32px 28px;
+    transition: all 0.2s;
+  }
+  .project-card:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(151,192,230,0.35);
+    transform: translateY(-2px);
+  }
+
+  .project-type {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .project-type::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    flex-shrink: 0;
+  }
+
+  .project-title {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .project-meta {
+    font-size: 13px;
+    color: rgba(220,237,248,0.6);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .tag {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    border: 1px solid rgba(151,192,230,0.25);
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: rgba(151,192,230,0.07);
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: var(--blue);
+    padding: 72px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .cta-band > * { position: relative; }
+  .cta-band .section-tag { color: var(--blue-light); justify-content: center; }
+  .cta-band .section-tag::before { background: var(--blue-light); }
+  .cta-band h2 { color: var(--white); margin-bottom: 10px; }
+  .cta-band p { color: var(--blue-light); font-size: 15px; margin-bottom: 36px; }
+  .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  /* ABOUT */
+  #about { background: var(--gray-light); }
+
+  .about-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cert-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 12px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .cert-item:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 16px rgba(0,73,144,0.1);
+  }
+
+  .cert-name {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+  .cert-full {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--gray-dark);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer { background: var(--blue-dark); border-top: 3px solid var(--blue); }
+
+  .footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 48px 48px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+
+  .footer-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    text-decoration: none;
+  }
+  .footer-logo-wrap .logo-name { color: var(--white); font-size: 20px; }
+  .footer-logo-wrap .logo-sub { color: var(--blue-light); }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: rgba(151,192,230,0.65);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(151,192,230,0.15);
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    font-size: 13px;
+    color: rgba(151,192,230,0.55);
+    text-decoration: none;
+    font-family: var(--font-head);
+    transition: color 0.15s;
+  }
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(151,192,230,0.12);
+    padding: 20px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-legal { font-size: 12px; color: rgba(151,192,230,0.35); font-family: var(--font-head); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(151,192,230,0.35);
+    text-decoration: none;
+    font-family: var(--font-head);
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: var(--blue-light); }
+
+  @media (max-width: 960px) {
+    .topbar, header, .hero-content { padding-left: 20px; padding-right: 20px; }
+    header { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 12px; }
+    nav { display: none; }
+    .stats-strip { grid-template-columns: repeat(2,1fr); padding: 20px; }
+    section { padding: 60px 20px; }
+    .services-grid, .industries-layout, .projects-grid, .about-layout, .footer-top { grid-template-columns: 1fr; }
+    .footer-top { padding: 40px 20px 32px; }
+    .footer-bottom { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:+13054681421">+1 (305) 468-1421</a>
+  <span class="topbar-sep">|</span>
+  <a href="mailto:support@integca.com">support@integca.com</a>
+  <span class="topbar-sep">|</span>
+  <a href="/careers">Careers</a>
+  <span class="topbar-sep">|</span><a href="https://www.linkedin.com/company/integca" target="_blank">LinkedIn</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo">
+    <img src="integ_logo.jpeg" alt="INTEG Integral Engineering" style="height:52px; width:auto; object-fit:contain;" />
+  </a>
+
+  <nav>
+    <span class="nav-item">Services <span class="chevron"></span>
+      <div class="dropdown">
+        <a href="/services/bms-automation">BMS &amp; Automation</a>
+        <a href="/services/hvac">HVAC Systems</a>
+        <a href="/services/medical-gas">Medical Gas</a>
+        <a href="/services/mep-engineering">MEP Engineering</a>
+      </div>
+    </span>
+    <span class="nav-item">Industries <span class="chevron"></span>
+      <div class="dropdown">
+        <a href="/industries/healthcare">Healthcare</a>
+        <a href="/industries/commercial">Commercial</a>
+      </div>
+    </span>
+    <a class="nav-item" href="/projects">Past Performance</a>
+    <a class="nav-item" href="/about">About</a>
+    <a class="btn-cta" href="/request-bid">Request a Bid</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-accent"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Florida's MEP Engineering Specialists</div>
+    <h1>Engineering Systems<br>Built to <strong>Perform.</strong></h1>
+    <p class="hero-sub">INTEG delivers precision HVAC, medical gas, plumbing, and MEP engineering for healthcare, residential, and commercial projects across Florida — on spec, on time, on code.</p>
+    <div class="hero-actions">
+      <a href="/request-bid" class="btn-primary">Request a Bid</a>
+      <a href="/projects" class="btn-outline">View Our Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Years in the US Market</div></div>
+  <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Projects Completed</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Core Disciplines (MEP)</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Code Compliant</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div class="section-tag">What We Do</div>
+    <h2>Core Service Lines</h2>
+    <p class="section-intro">From intelligent building controls to life-critical medical gas systems, we engineer the infrastructure that keeps your facility running.</p>
+  </div>
+  <div class="services-grid">
+    <a class="service-card" href="/services/bms-automation">
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="3" stroke="#004990" stroke-width="1.5"/><path d="M8 14h12M14 10v8" stroke="#004990" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="3" stroke="#97c0e6" stroke-width="1.2"/></svg>
+      </div>
+      <span class="service-num">01 — BMS &amp; Automation</span>
+      <h3>Building Management Systems</h3>
+      <p class="service-desc">Integrated BMS design and installation with BIM coordination — centralized monitoring, HVAC management, energy optimization, and fault detection. MEP Mechanical LOD 350 capable.</p>
+      <span class="service-link">Learn More</span>
+    </a>
+    <a class="service-card" href="/services/hvac">
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 28 28" fill="none"><path d="M14 4v20M4 14h20" stroke="#004990" stroke-width="1.5" stroke-linecap="round"/><path d="M7 7l14 14M21 7L7 21" stroke="#97c0e6" stroke-width="1.2" stroke-linecap="round"/><circle cx="14" cy="14" r="4" stroke="#004990" stroke-width="1.5"/></svg>
+      </div>
+      <span class="service-num">02 — HVAC Systems</span>
+      <h3>HVAC Systems</h3>
+      <p class="service-desc">Design and installation of commercial and healthcare-grade HVAC systems — VRF/VRV, DOAS, chilled water, and split systems meeting ASHRAE, NFPA, and infection-control standards.</p>
+      <span class="service-link">Learn More</span>
+    </a>
+    <a class="service-card" href="/services/medical-gas">
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 28 28" fill="none"><rect x="10" y="3" width="8" height="5" rx="2" stroke="#004990" stroke-width="1.5"/><rect x="6" y="8" width="16" height="18" rx="3" stroke="#004990" stroke-width="1.5"/><path d="M11 18h6M14 15v6" stroke="#97c0e6" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <span class="service-num">03 — Medical Gas</span>
+      <h3>Medical Gas Systems</h3>
+      <p class="service-desc">NFPA 99-compliant medical gas piping — oxygen, nitrogen, vacuum, and specialty gas systems engineered for hospital and clinical environments. Proven with Jackson Health System.</p>
+      <span class="service-link">Learn More</span>
+    </a>
+    <a class="service-card" href="/services/mep-engineering">
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 28 28" fill="none"><path d="M6 22l5-9 4 5 4-8 5 12" stroke="#004990" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23" cy="6" r="3" stroke="#97c0e6" stroke-width="1.2"/></svg>
+      </div>
+      <span class="service-num">04 — MEP Engineering</span>
+      <h3>MEP Engineering</h3>
+      <p class="service-desc">Full-scope mechanical, electrical, and plumbing engineering — design-build coordination, energy modeling, BIM LOD 350, pre-fabrication, and construction documentation.</p>
+      <span class="service-link">Learn More</span>
+    </a>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div style="max-width:1200px;margin:0 auto 48px;">
+    <div class="section-tag">Who We Serve</div>
+    <h2>Industries We Serve</h2>
+    <p class="section-intro">Deep expertise in sectors where systems reliability is non-negotiable.</p>
+  </div>
+  <div class="industries-layout">
+    <a class="industry-card" href="/industries/healthcare">
+      <div class="industry-bg healthcare">
+        <div class="industry-bg-title">Healthcare<br>Facilities</div>
+      </div>
+      <div class="industry-body">
+        <span class="industry-label">Healthcare</span>
+        <p class="industry-desc">Proven partner for life-safety critical environments. From acute-care hospitals to ambulatory surgery centers — infection-control HVAC, medical gas systems, and BMS for clinical environments. Jackson Health System trusted partner.</p>
+        <span class="service-link">Healthcare Projects</span>
+      </div>
+    </a>
+    <a class="industry-card" href="/industries/commercial">
+      <div class="industry-bg commercial">
+        <div class="industry-bg-title">Residential &amp;<br>Commercial</div>
+      </div>
+      <div class="industry-body">
+        <span class="industry-label">Residential &amp; Commercial</span>
+        <p class="industry-desc">High-rise residential, boutique hospitality, and Class A commercial — DOAS, VRF systems, chilled water, and full MEP scopes for developers and GCs across South Florida.</p>
+        <span class="service-link">Commercial Projects</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PAST PERFORMANCE -->
+<section id="projects">
+  <div class="projects-header">
+    <div>
+      <div class="section-tag">Past Performance</div>
+      <h2>Selected Projects</h2>
+      <p class="section-intro" style="margin-bottom:0;">Proven delivery across healthcare and commercial sectors.</p>
+    </div>
+    <a href="/projects" class="btn-outline">View All Projects</a>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-type">Healthcare</div>
+      <div class="project-title">Jackson Health System — Multiple Facilities</div>
+      <p class="project-meta">Ongoing MEP partner for JHS across 8+ projects including ED Renovation, West Wing 8, IR/CT suites, MRI rooms, Labor &amp; Delivery modernization, and Catheterization Laboratory.</p>
+      <div class="project-tags"><span class="tag">HVAC</span><span class="tag">Medical Gas</span><span class="tag">MEP</span><span class="tag">BMS</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-type">Hospitality</div>
+      <div class="project-title">AC Marriott Fort Lauderdale Sawgrass</div>
+      <p class="project-meta">Mechanical installation across 8-floor hotel building. VRF system, outside air units, full BIM modeling and MEP coordination at LOD 350. Location: Sunrise, FL.</p>
+      <div class="project-tags"><span class="tag">HVAC</span><span class="tag">VRF</span><span class="tag">BIM LOD 350</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-type">Residential</div>
+      <div class="project-title">The Terraces — Fort Lauderdale Beach</div>
+      <p class="project-meta">10-story luxury beachfront residential. DOAS/Split system design and installation. 22 exclusive residences at 527 Orton Avenue, Fort Lauderdale Beach, FL.</p>
+      <div class="project-tags"><span class="tag">HVAC</span><span class="tag">DOAS</span><span class="tag">Residential</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="section-tag">Start a Project</div>
+  <h2>Ready to Bid?</h2>
+  <p>Submit your project details — our engineering team responds within one business day.</p>
+  <div class="cta-actions">
+    <a href="/request-bid" class="btn-primary">Request a Bid</a>
+    <a href="/projects" class="btn-outline">See Our Projects</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-layout">
+    <div class="about-text">
+      <div class="section-tag">About INTEG</div>
+      <h2>Built on Engineering Precision</h2>
+      <p>INTEG is a specialty MEP contractor with 8+ years of proven performance in the Florida market. We self-perform mechanical, electrical, plumbing, and medical gas work with a team of licensed engineers and certified technicians.</p>
+      <p>Our PreFab-first approach delivers greater quality control, reduced field risk, and faster project completion. From pre-construction planning beyond Florida Building Code compliance to BIM coordination at LOD 350 — we own every phase.</p>
+      <p>Single point of accountability from design through commissioning. That's why Jackson Health System, AC Marriott, and Florida's top developers choose INTEG.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
+        <a href="/about/team" class="btn-cta" style="font-size:12px;padding:10px 22px;">Meet the Team</a>
+        <a href="/about/certifications" style="padding:9px 22px;border:1px solid var(--border);font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-radius:4px;">Certifications</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-dark);margin-bottom:16px;">Licenses &amp; Certifications</p>
+      <div class="cert-grid">
+        <div class="cert-item"><div class="cert-name">NFPA 99</div><div class="cert-full">Medical Gas Systems</div></div>
+        <div class="cert-item"><div class="cert-name">ASHRAE</div><div class="cert-full">Energy &amp; HVAC</div></div>
+        <div class="cert-item"><div class="cert-name">BIM</div><div class="cert-full">LOD 350 Capable</div></div>
+        <div class="cert-item"><div class="cert-name">PreFab</div><div class="cert-full">Quality First</div></div>
+        <div class="cert-item"><div class="cert-name">FBC</div><div class="cert-full">Florida Building Code</div></div>
+        <div class="cert-item"><div class="cert-name">MEP</div><div class="cert-full">Licensed Engineers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="/" class="footer-logo-wrap">
+        <img src="integ_logo.jpeg" alt="INTEG Integral Engineering" style="height:44px; width:auto; object-fit:contain; filter:brightness(0) invert(1);" />
+      </a>
+      <p class="footer-tagline">Florida's MEP engineering specialists — HVAC, medical gas, plumbing &amp; BMS for healthcare, residential, and commercial construction.</p>
+      <a href="/contact" class="btn-outline" style="font-size:12px;padding:8px 20px;display:inline-block;">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/bms-automation">BMS &amp; Automation</a></li>
+        <li><a href="/services/hvac">HVAC Systems</a></li>
+        <li><a href="/services/medical-gas">Medical Gas</a></li>
+        <li><a href="/services/mep-engineering">MEP Engineering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About INTEG</a></li>
+        <li><a href="/about/team">Team</a></li>
+        <li><a href="/about/certifications">Certifications</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/projects">Past Performance</a></li>
+        <li><a href="/about/certifications">Capability Statement</a></li>
+        <li><a href="/request-bid">Request a Bid</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">&copy; 2025 INTEG Integral Engineering. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+13054681421">+1 (305) 468-1421</a></li>
+        <li><a href="mailto:support@integca.com">support@integca.com</a></li>
+        <li style="color:rgba(151,192,230,0.55);font-size:13px;font-family:var(--font-head);margin-top:8px;line-height:1.6;">15712 SW 41st St, Suite 14<br>Davie, FL 33331, USA</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

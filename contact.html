@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact INTEG | Request a Bid — MEP Engineering Florida</title>
+<meta name="description" content="Contact INTEG Integral Engineering to request a bid on your MEP engineering project. Our Florida-licensed engineering team responds within one business day. Serving healthcare, residential, and commercial sectors across Florida.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:        #004990;
+    --blue-mid:    #003a75;
+    --blue-dark:   #002a58;
+    --blue-light:  #97c0e6;
+    --blue-pale:   #dcedf8;
+    --gray:        #b6b3b3;
+    --gray-dark:   #7e7c7c;
+    --gray-light:  #f4f4f4;
+    --white:       #ffffff;
+    --text:        #2c2c2c;
+    --text-light:  #5a5a5a;
+    --border:      rgba(0,73,144,0.12);
+    --font-head:   'Montserrat', sans-serif;
+    --font-body:   'Open Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--blue-dark);
+    padding: 6px 48px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar a {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--blue-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .topbar a:hover { color: #fff; }
+  .topbar-sep { color: rgba(151,192,230,0.3); font-size: 10px; }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    box-shadow: 0 2px 16px rgba(0,73,144,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 76px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .logo-name {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--blue);
+  }
+  .logo-sub {
+    font-family: var(--font-head);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+  }
+
+  nav { display: flex; align-items: center; gap: 2px; }
+
+  .nav-item {
+    position: relative;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nav-item:hover { color: var(--blue); background: var(--blue-pale); }
+  .nav-item.active { color: var(--blue); }
+
+  .nav-item .chevron {
+    display: inline-block;
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0.6;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 230px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 0 0 8px 8px;
+    padding: 8px 0;
+    box-shadow: 0 8px 32px rgba(0,73,144,0.12);
+  }
+  .nav-item:hover .dropdown { display: block; }
+
+  .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .dropdown a::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .dropdown a:hover {
+    color: var(--blue);
+    background: var(--blue-pale);
+    border-left-color: var(--blue);
+  }
+  .dropdown a:hover::before { background: var(--blue); }
+
+  .btn-cta {
+    margin-left: 12px;
+    padding: 10px 24px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+  .btn-cta:hover {
+    background: var(--blue-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,73,144,0.3);
+  }
+
+  /* SHARED SECTION */
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 24px; height: 3px;
+    background: var(--blue);
+  }
+
+  h2 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--blue-dark);
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, rgba(0,73,144,0.7) 100%);
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(151,192,230,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(151,192,230,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .page-hero-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 42%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(151,192,230,0.07) 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .page-hero-ring {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    border: 1px solid rgba(151,192,230,0.15);
+    pointer-events: none;
+  }
+  .page-hero-ring::after {
+    content: '';
+    position: absolute;
+    inset: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(151,192,230,0.1);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 72px 48px;
+    max-width: 760px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: var(--blue-light);
+  }
+  .page-hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  .page-hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(220,237,248,0.85);
+    line-height: 1.75;
+    max-width: 540px;
+  }
+
+  /* CONTACT MAIN SECTION */
+  .contact-section {
+    padding: 80px 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  /* FORM */
+  .form-wrap {
+    background: var(--white);
+  }
+  .form-title {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .form-subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    line-height: 1.65;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group label {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: var(--font-body);
+    width: 100%;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237e7c7c' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,73,144,0.08);
+  }
+  .form-group input.error,
+  .form-group select.error,
+  .form-group textarea.error {
+    border-color: #e53e3e;
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    height: 52px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-top: 4px;
+  }
+  .btn-submit:hover {
+    background: var(--blue-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0,73,144,0.28);
+  }
+  .btn-submit:active { transform: translateY(0); }
+
+  .form-note {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 6px;
+    font-family: var(--font-head);
+    letter-spacing: 0.02em;
+  }
+
+  /* SUCCESS MESSAGE */
+  .success-msg {
+    display: none;
+    background: var(--blue-pale);
+    border: 1.5px solid rgba(0,73,144,0.2);
+    border-radius: 8px;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .success-msg .success-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .success-msg h3 {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .success-msg p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  /* CONTACT INFO CARD */
+  .contact-card {
+    background: var(--gray-light);
+    border-radius: 8px;
+    padding: 40px 36px;
+    position: sticky;
+    top: 96px;
+  }
+  .contact-card-title {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .contact-info-block {
+    margin-bottom: 22px;
+  }
+  .contact-info-block:last-of-type { margin-bottom: 0; }
+
+  .contact-info-label {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-dark);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .contact-info-label span { font-size: 14px; }
+
+  .contact-info-val {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 21px;
+  }
+  .contact-info-val a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+  .contact-info-val a:hover { color: var(--blue-mid); text-decoration: underline; }
+
+  .card-divider {
+    height: 1px;
+    background: rgba(0,73,144,0.12);
+    margin: 24px 0;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 21px;
+  }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    background: var(--white);
+    transition: all 0.2s;
+    width: fit-content;
+  }
+  .social-link:hover {
+    background: var(--blue-pale);
+    border-color: var(--blue);
+  }
+  .social-link svg {
+    width: 16px; height: 16px;
+    flex-shrink: 0;
+  }
+
+  .response-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-top: 4px;
+  }
+
+  /* MAP SECTION */
+  .map-section {
+    padding: 80px 48px;
+    background: var(--gray-light);
+  }
+  .map-header {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+  }
+  .map-section .section-tag { color: var(--blue); }
+  .map-section h2 { color: var(--text); }
+
+  .map-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0,73,144,0.08);
+  }
+  .map-wrap iframe {
+    display: block;
+  }
+
+  /* WHY INTEG STRIP */
+  .why-strip {
+    background: var(--blue);
+    padding: 72px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .why-strip > * { position: relative; }
+  .why-strip-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .why-strip .section-tag {
+    color: var(--blue-light);
+    justify-content: center;
+  }
+  .why-strip .section-tag::before { background: var(--blue-light); }
+  .why-strip h2 {
+    color: var(--white);
+    margin-bottom: 0;
+  }
+  .why-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .why-item {
+    text-align: center;
+    padding: 32px 24px;
+    border: 1px solid rgba(151,192,230,0.2);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    transition: all 0.25s;
+  }
+  .why-item:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(151,192,230,0.4);
+    transform: translateY(-3px);
+  }
+  .why-icon {
+    width: 56px; height: 56px;
+    background: rgba(151,192,230,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .why-icon svg { width: 26px; height: 26px; }
+  .why-item h3 {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .why-item p {
+    font-size: 13px;
+    color: rgba(220,237,248,0.72);
+    line-height: 1.75;
+  }
+
+  /* FOOTER */
+  footer { background: var(--blue-dark); border-top: 3px solid var(--blue); }
+
+  .footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 48px 48px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+
+  .footer-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    text-decoration: none;
+  }
+  .footer-logo-wrap .logo-name { color: var(--white); font-size: 20px; }
+  .footer-logo-wrap .logo-sub { color: var(--blue-light); }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: rgba(151,192,230,0.65);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(151,192,230,0.15);
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    font-size: 13px;
+    color: rgba(151,192,230,0.55);
+    text-decoration: none;
+    font-family: var(--font-head);
+    transition: color 0.15s;
+  }
+  .footer-col a:hover { color: var(--white); }
+
+  .btn-outline {
+    padding: 12px 30px;
+    border: 2px solid rgba(151,192,230,0.5);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    border-color: var(--blue-light);
+    background: rgba(151,192,230,0.1);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(151,192,230,0.12);
+    padding: 20px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-legal { font-size: 12px; color: rgba(151,192,230,0.35); font-family: var(--font-head); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(151,192,230,0.35);
+    text-decoration: none;
+    font-family: var(--font-head);
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: var(--blue-light); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .topbar, .page-hero-content, .contact-section, .map-section, .why-strip, footer .footer-top, footer .footer-bottom {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .topbar { padding: 6px 20px; }
+    header { height: auto; padding: 12px 20px; flex-wrap: wrap; gap: 12px; }
+    nav { display: none; }
+    .page-hero-content { padding: 52px 20px; }
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .contact-card { position: static; }
+    .form-row { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+    .footer-bottom { padding: 16px 20px; }
+    .map-section { padding: 60px 20px; }
+    .why-strip { padding: 60px 20px; }
+    .contact-section { padding: 60px 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .topbar { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:+13054681421">+1 (305) 468-1421</a>
+  <span class="topbar-sep">|</span>
+  <a href="mailto:support@integca.com">support@integca.com</a>
+  <span class="topbar-sep">|</span>
+  <a href="/careers">Careers</a>
+  <span class="topbar-sep">|</span>
+  <a href="https://www.linkedin.com/company/integca" target="_blank">LinkedIn</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo">
+    <img src="integ_logo.jpeg" alt="INTEG Integral Engineering" style="height:52px; width:auto; object-fit:contain;" />
+  </a>
+
+  <nav>
+    <span class="nav-item">Services <span class="chevron"></span>
+      <div class="dropdown">
+        <a href="/services/bms-automation">BMS &amp; Automation</a>
+        <a href="/services/hvac">HVAC Systems</a>
+        <a href="/services/medical-gas">Medical Gas</a>
+        <a href="/services/mep-engineering">MEP Engineering</a>
+      </div>
+    </span>
+    <span class="nav-item">Industries <span class="chevron"></span>
+      <div class="dropdown">
+        <a href="/industries/healthcare">Healthcare</a>
+        <a href="/industries/commercial">Commercial</a>
+      </div>
+    </span>
+    <a class="nav-item" href="/projects">Past Performance</a>
+    <a class="nav-item" href="/about">About</a>
+    <a class="nav-item active" href="/contact" style="color:var(--blue);">Contact</a>
+    <a class="btn-cta" href="/request-bid">Request a Bid</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-accent"></div>
+  <div class="page-hero-ring"></div>
+  <div class="page-hero-content">
+    <div class="hero-eyebrow">Get In Touch</div>
+    <h1>Let's Talk About<br>Your Project</h1>
+    <p class="page-hero-sub">Our engineering team is ready to review your scope and respond within one business day.</p>
+  </div>
+</section>
+
+<!-- CONTACT MAIN SECTION -->
+<div class="contact-section">
+  <div class="contact-layout">
+
+    <!-- LEFT: FORM -->
+    <div class="form-wrap">
+      <div class="section-tag">Request a Bid</div>
+      <div class="form-title">Tell Us About Your Project</div>
+      <p class="form-subtitle">Fill out the form below and our engineering team will review your scope and get back to you within one business day.</p>
+
+      <div class="success-msg" id="successMsg">
+        <span class="success-icon">&#x2705;</span>
+        <h3>Thank you! We'll be in touch within one business day.</h3>
+        <p>Our engineering team has received your request and will review your project scope shortly. We look forward to working with you.</p>
+      </div>
+
+      <form class="contact-form" id="contactForm" action="#" method="POST" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name <span style="color:#e53e3e;">*</span></label>
+            <input type="text" id="fullName" name="fullName" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="companyName">Company Name <span style="color:#e53e3e;">*</span></label>
+            <input type="text" id="companyName" name="companyName" placeholder="ABC Construction" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address <span style="color:#e53e3e;">*</span></label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (305) 000-0000" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectType">Project Type <span style="color:#e53e3e;">*</span></label>
+            <select id="projectType" name="projectType" required>
+              <option value="">-- Select project type --</option>
+              <option value="healthcare">Healthcare Facility</option>
+              <option value="residential">Residential / Multifamily</option>
+              <option value="commercial">Commercial / Office</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="industrial">Industrial</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="serviceNeeded">Service Needed <span style="color:#e53e3e;">*</span></label>
+            <select id="serviceNeeded" name="serviceNeeded" required>
+              <option value="">-- Select service --</option>
+              <option value="bms">BMS &amp; Automation</option>
+              <option value="hvac">HVAC Systems</option>
+              <option value="medical-gas">Medical Gas</option>
+              <option value="mep">MEP Engineering</option>
+              <option value="multiple">Multiple Services</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectLocation">Project Location</label>
+          <input type="text" id="projectLocation" name="projectLocation" placeholder="City, FL" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Project Description <span style="color:#e53e3e;">*</span></label>
+          <textarea id="description" name="description" rows="5" placeholder="Briefly describe your project scope, size, and timeline..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="hearAbout">How did you hear about us?</label>
+          <select id="hearAbout" name="hearAbout">
+            <option value="">-- Select --</option>
+            <option value="google">Google Search</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="referral">Referral</option>
+            <option value="past-client">Past Client</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Request &rarr;</button>
+        <p class="form-note">&#x1F512; Your information is confidential and will never be shared.</p>
+
+      </form>
+    </div>
+
+    <!-- RIGHT: CONTACT INFO CARD -->
+    <div class="contact-card">
+      <div class="contact-card-title">Contact Information</div>
+
+      <div class="contact-info-block">
+        <div class="contact-info-label"><span>&#x1F4CD;</span> Office</div>
+        <div class="contact-info-val">
+          15712 SW 41st St, Suite 14<br>
+          Davie, FL 33331<br>
+          United States
+        </div>
+      </div>
+
+      <div class="contact-info-block">
+        <div class="contact-info-label"><span>&#x1F4DE;</span> Phone</div>
+        <div class="contact-info-val">
+          <a href="tel:+13054681421">+1 (305) 468-1421</a>
+        </div>
+      </div>
+
+      <div class="contact-info-block">
+        <div class="contact-info-label"><span>&#x2709;&#xFE0F;</span> Email</div>
+        <div class="contact-info-val">
+          <a href="mailto:support@integca.com">support@integca.com</a>
+        </div>
+      </div>
+
+      <div class="contact-info-block">
+        <div class="contact-info-label"><span>&#x1F550;</span> Hours</div>
+        <div class="contact-info-val">
+          Monday &ndash; Friday<br>
+          8:00 AM &ndash; 6:00 PM EST
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="contact-info-block">
+        <div class="contact-info-label" style="margin-bottom:12px;"><span>&#x1F310;</span> Follow Us</div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/integca" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="4" stroke="#004990" stroke-width="1.5"/>
+              <path d="M7 10v7M7 7v.5" stroke="#004990" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="#004990" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            linkedin.com/company/integca
+          </a>
+          <a href="https://www.instagram.com/integca" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="#004990" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="4" stroke="#004990" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="#004990"/>
+            </svg>
+            @integca
+          </a>
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="response-badge">
+        <span style="font-size:18px;">&#x26A1;</span>
+        We respond within 1 business day
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+<section class="map-section">
+  <div class="map-header">
+    <div class="section-tag">Our Location</div>
+    <h2>Visit Our Office</h2>
+  </div>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.5!2d-80.3!3d25.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s15712+SW+41st+St+Suite+14+Davie+FL+33331!5e0!3m2!1sen!2sus!4v1"
+      width="100%"
+      height="420"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="INTEG Integral Engineering — 15712 SW 41st St, Suite 14, Davie, FL 33331">
+    </iframe>
+  </div>
+</section>
+
+<!-- WHY INTEG STRIP -->
+<section class="why-strip">
+  <div class="why-strip-header">
+    <div class="section-tag">Why INTEG</div>
+    <h2>Built for Your Project's Success</h2>
+  </div>
+  <div class="why-grid">
+
+    <div class="why-item">
+      <div class="why-icon">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13" cy="13" r="10" stroke="#97c0e6" stroke-width="1.5"/>
+          <path d="M13 8v5l3 3" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Fast Response</h3>
+      <p>Engineering team reviews every request within one business day.</p>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 3L4 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7L13 3z" stroke="#97c0e6" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M9 13l3 3 5-5" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Licensed Engineers</h3>
+      <p>All projects led by Florida-licensed MEP engineers and certified technicians.</p>
+    </div>
+
+    <div class="why-item">
+      <div class="why-icon">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 20l4-8 4 5 4-8 4 11" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="22" cy="5" r="2.5" stroke="#97c0e6" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>Proven Track Record</h3>
+      <p>8+ years delivering healthcare, residential, and commercial projects across Florida.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="/" class="footer-logo-wrap">
+        <img src="integ_logo.jpeg" alt="INTEG Integral Engineering" style="height:44px; width:auto; object-fit:contain; filter:brightness(0) invert(1);" />
+      </a>
+      <p class="footer-tagline">Florida's MEP engineering specialists — HVAC, medical gas, plumbing &amp; BMS for healthcare, residential, and commercial construction.</p>
+      <a href="/contact" class="btn-outline" style="font-size:12px;padding:8px 20px;display:inline-block;">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/bms-automation">BMS &amp; Automation</a></li>
+        <li><a href="/services/hvac">HVAC Systems</a></li>
+        <li><a href="/services/medical-gas">Medical Gas</a></li>
+        <li><a href="/services/mep-engineering">MEP Engineering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About INTEG</a></li>
+        <li><a href="/about/team">Team</a></li>
+        <li><a href="/about/certifications">Certifications</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/projects">Past Performance</a></li>
+        <li><a href="/about/certifications">Capability Statement</a></li>
+        <li><a href="/request-bid">Request a Bid</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">&copy; 2025 INTEG Integral Engineering. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+13054681421">+1 (305) 468-1421</a></li>
+        <li><a href="mailto:support@integca.com">support@integca.com</a></li>
+        <li style="color:rgba(151,192,230,0.55);font-size:13px;font-family:var(--font-head);margin-top:8px;line-height:1.6;">15712 SW 41st St, Suite 14<br>Davie, FL 33331, USA</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('contactForm');
+  var successMsg = document.getElementById('successMsg');
+
+  var requiredFields = [
+    { id: 'fullName',      type: 'text'   },
+    { id: 'companyName',   type: 'text'   },
+    { id: 'email',         type: 'email'  },
+    { id: 'projectType',   type: 'select' },
+    { id: 'serviceNeeded', type: 'select' },
+    { id: 'description',   type: 'text'   }
+  ];
+
+  function validateEmail(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  }
+
+  function clearErrors() {
+    requiredFields.forEach(function (f) {
+      var el = document.getElementById(f.id);
+      if (el) el.classList.remove('error');
+    });
+  }
+
+  function validateForm() {
+    var valid = true;
+    clearErrors();
+
+    requiredFields.forEach(function (f) {
+      var el = document.getElementById(f.id);
+      if (!el) return;
+      var val = el.value.trim();
+
+      if (!val) {
+        el.classList.add('error');
+        valid = false;
+      } else if (f.type === 'email' && !validateEmail(val)) {
+        el.classList.add('error');
+        valid = false;
+      }
+    });
+
+    return valid;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validateForm()) {
+      var firstError = form.querySelector('.error');
+      if (firstError) {
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstError.focus();
+      }
+      return;
+    }
+
+    // Show success message, hide form
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Remove error class on input
+  requiredFields.forEach(function (f) {
+    var el = document.getElementById(f.id);
+    if (!el) return;
+    el.addEventListener('input', function () { el.classList.remove('error'); });
+    el.addEventListener('change', function () { el.classList.remove('error'); });
+  });
+})();
+</script>
+
+</body>
+</html>
