@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEP Engineering Services | BMS, HVAC, Medical Gas — INTEG Florida</title>
+<meta name="description" content="INTEG delivers full-scope MEP engineering services in Florida — BMS automation, HVAC systems, NFPA 99 medical gas, and MEP design-build. PreFab-first. BIM LOD 350. Trusted by Jackson Health System.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.integca.com/services">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:        #004990;
+    --blue-mid:    #003a75;
+    --blue-dark:   #002a58;
+    --blue-light:  #97c0e6;
+    --blue-pale:   #dcedf8;
+    --gray:        #b6b3b3;
+    --gray-dark:   #7e7c7c;
+    --gray-light:  #f4f4f4;
+    --white:       #ffffff;
+    --text:        #2c2c2c;
+    --text-light:  #5a5a5a;
+    --border:      rgba(0,73,144,0.12);
+    --font-head:   'Montserrat', sans-serif;
+    --font-body:   'Open Sans', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--text); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+
+  /* TOP BAR */
+  .topbar { background: var(--blue-dark); padding: 6px 48px; display: flex; justify-content: flex-end; align-items: center; gap: 24px; }
+  .topbar a { font-family: var(--font-head); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: var(--blue-light); text-decoration: none; transition: color 0.2s; }
+  .topbar a:hover { color: #fff; }
+  .topbar-sep { color: rgba(151,192,230,0.3); font-size: 10px; }
+
+  /* HEADER */
+  header { position: sticky; top: 0; z-index: 100; background: var(--white); box-shadow: 0 2px 16px rgba(0,73,144,0.10); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 76px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  nav { display: flex; align-items: center; gap: 2px; }
+  .nav-item { position: relative; font-family: var(--font-head); font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: var(--text); text-decoration: none; padding: 10px 16px; border-radius: 4px; transition: color 0.2s, background 0.2s; cursor: pointer; text-transform: uppercase; white-space: nowrap; }
+  .nav-item:hover { color: var(--blue); background: var(--blue-pale); }
+  .nav-item.active { color: var(--blue); }
+  .nav-item .chevron { display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-left: 5px; vertical-align: middle; opacity: 0.6; }
+  .dropdown { display: none; position: absolute; top: calc(100% + 4px); left: 0; min-width: 230px; background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--blue); border-radius: 0 0 8px 8px; padding: 8px 0; box-shadow: 0 8px 32px rgba(0,73,144,0.12); }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--text-light); text-decoration: none; font-family: var(--font-head); font-size: 12px; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; transition: all 0.15s; border-left: 3px solid transparent; }
+  .dropdown a::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-light); flex-shrink: 0; transition: background 0.15s; }
+  .dropdown a:hover { color: var(--blue); background: var(--blue-pale); border-left-color: var(--blue); }
+  .dropdown a:hover::before { background: var(--blue); }
+  .btn-cta { margin-left: 12px; padding: 10px 24px; background: var(--blue); color: var(--white); font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; white-space: nowrap; }
+  .btn-cta:hover { background: var(--blue-mid); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,73,144,0.3); }
+
+  /* BUTTONS */
+  .btn-primary { padding: 13px 30px; background: var(--white); color: var(--blue); font-family: var(--font-head); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: all 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--blue-pale); box-shadow: 0 6px 20px rgba(0,0,0,0.15); transform: translateY(-2px); }
+  .btn-outline { padding: 12px 30px; border: 2px solid rgba(151,192,230,0.5); color: var(--white); font-family: var(--font-head); font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: all 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--blue-light); background: rgba(151,192,230,0.1); }
+
+  /* PAGE HERO */
+  .page-hero { position: relative; min-height: 360px; display: flex; align-items: center; overflow: hidden; background: var(--blue-dark); }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, rgba(0,73,144,0.7) 100%); }
+  .page-hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(151,192,230,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(151,192,230,0.06) 1px, transparent 1px); background-size: 48px 48px; }
+  .hero-accent { position: absolute; top: 0; right: 0; width: 42%; height: 100%; background: linear-gradient(135deg, transparent 0%, rgba(151,192,230,0.07) 100%); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
+  .hero-ring { position: absolute; right: -80px; top: 50%; transform: translateY(-50%); width: 420px; height: 420px; border-radius: 50%; border: 1px solid rgba(151,192,230,0.15); pointer-events: none; }
+  .hero-ring::after { content: ''; position: absolute; inset: 60px; border-radius: 50%; border: 1px solid rgba(151,192,230,0.1); }
+  .hero-content { position: relative; z-index: 2; padding: 80px 48px; max-width: 760px; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-head); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 20px; }
+  .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--blue-light); }
+  h1 { font-family: var(--font-head); font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 20px; letter-spacing: -0.01em; }
+  .hero-sub { font-size: 16px; font-weight: 300; color: rgba(220,237,248,0.85); line-height: 1.75; max-width: 580px; margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* SHARED */
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-head); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .section-tag::before { content: ''; width: 24px; height: 3px; background: var(--blue); }
+  h2 { font-family: var(--font-head); font-size: clamp(26px, 3vw, 40px); font-weight: 700; color: var(--text); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.15; }
+  h3 { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+
+  /* INTRO */
+  .intro-section { padding: 90px 48px; background: var(--white); }
+  .intro-layout { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .intro-text p { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+  .disciplines-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .discipline-badge { background: var(--blue-pale); border: 1px solid var(--border); border-radius: 8px; padding: 22px 24px; display: flex; align-items: center; gap: 12px; font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: 0.03em; transition: all 0.2s; cursor: default; }
+  .discipline-badge:hover { background: var(--blue); color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,73,144,0.2); }
+  .discipline-badge span { font-size: 22px; }
+
+  /* SERVICE SECTIONS */
+  .service-section { padding: 100px 48px; }
+  .service-section.bg-gray { background: var(--gray-light); }
+  .service-section.bg-white { background: var(--white); }
+  .service-layout { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .service-layout.reverse { direction: rtl; }
+  .service-layout.reverse > * { direction: ltr; }
+  .service-visual { height: 420px; border-radius: 12px; background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .service-visual::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(151,192,230,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(151,192,230,0.07) 1px, transparent 1px); background-size: 32px 32px; }
+  .service-visual svg { position: relative; z-index: 1; }
+  .service-big-num { font-family: var(--font-head); font-size: 80px; font-weight: 700; color: var(--blue-pale); line-height: 1; margin-bottom: -20px; display: block; }
+  .service-desc-text { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 28px; margin-top: 12px; }
+  .feature-list { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 14px; }
+  .feature-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-light); line-height: 1.5; }
+  .feature-list li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 6px; }
+  .service-cta-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); text-decoration: none; background: var(--blue); padding: 12px 28px; border-radius: 4px; transition: background 0.2s, transform 0.15s; }
+  .service-cta-link:hover { background: var(--blue-mid); transform: translateY(-1px); }
+
+  /* PREFAB */
+  .prefab-section { background: var(--blue); padding: 90px 48px; }
+  .prefab-header { max-width: 1200px; margin: 0 auto 56px; text-align: center; }
+  .prefab-header .section-tag { color: var(--blue-light); justify-content: center; }
+  .prefab-header .section-tag::before { background: var(--blue-light); }
+  .prefab-header h2 { color: var(--white); }
+  .prefab-header p { font-size: 15px; color: rgba(220,237,248,0.75); max-width: 520px; margin: 0 auto; line-height: 1.75; }
+  .prefab-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .prefab-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 36px 32px; transition: background 0.2s; }
+  .prefab-card:hover { background: rgba(255,255,255,0.11); }
+  .prefab-icon { width: 52px; height: 52px; background: rgba(151,192,230,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .prefab-icon svg { width: 28px; height: 28px; }
+  .prefab-card h3 { color: var(--white); margin-bottom: 12px; }
+  .prefab-card p { font-size: 14px; color: rgba(220,237,248,0.7); line-height: 1.75; }
+
+  /* CTA BAND */
+  .cta-band { background: var(--blue-dark); padding: 80px 48px; text-align: center; position: relative; overflow: hidden; }
+  .cta-band::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+  .cta-band > * { position: relative; }
+  .cta-band .section-tag { color: var(--blue-light); justify-content: center; }
+  .cta-band .section-tag::before { background: var(--blue-light); }
+  .cta-band h2 { color: var(--white); margin-bottom: 10px; }
+  .cta-band p { color: rgba(220,237,248,0.75); font-size: 15px; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer { background: var(--blue-dark); border-top: 3px solid var(--blue); }
+  .footer-top { max-width: 1200px; margin: 0 auto; padding: 60px 48px 48px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; }
+  .footer-logo-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; text-decoration: none; }
+  .footer-tagline { font-size: 13px; color: rgba(151,192,230,0.65); line-height: 1.7; margin-bottom: 20px; }
+  .footer-col h4 { font-family: var(--font-head); font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid rgba(151,192,230,0.15); }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { font-size: 13px; color: rgba(151,192,230,0.55); text-decoration: none; font-family: var(--font-head); transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { border-top: 1px solid rgba(151,192,230,0.12); padding: 20px 48px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-legal { font-size: 12px; color: rgba(151,192,230,0.35); font-family: var(--font-head); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 12px; color: rgba(151,192,230,0.35); text-decoration: none; font-family: var(--font-head); transition: color 0.15s; }
+  .footer-links a:hover { color: var(--blue-light); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .topbar, header { padding-left: 20px; padding-right: 20px; }
+    header { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 12px; }
+    nav { display: none; }
+    .intro-section, .service-section, .prefab-section, .cta-band { padding: 60px 20px; }
+    .intro-layout, .service-layout, .prefab-grid, .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .service-layout.reverse { direction: ltr; }
+    .disciplines-grid { grid-template-columns: 1fr 1fr; }
+    .service-visual { height: 260px; }
+    .service-big-num { font-size: 52px; }
+    .hero-content { padding: 60px 20px; }
+    .footer-top { padding: 40px 20px 32px; }
+    .footer-bottom { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:+13054681421">+1 (305) 468-1421</a>
+  <span class="topbar-sep">|</span>
+  <a href="mailto:support@integca.com">support@integca.com</a>
+  <span class="topbar-sep">|</span>
+  <a href="/careers">Careers</a>
+  <span class="topbar-sep">|</span>
+  <a href="https://www.linkedin.com/company/integca" target="_blank">LinkedIn</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">
+    <img src="integ_logo.jpeg" alt="INTEG Integral Engineering" style="height:52px;width:auto;object-fit:contain;">
+  </a>
+  <nav>
+    <span class="nav-item active">Services <span class="chevron"></span>
+      <div class="dropdown">
+        <a href="#bms">BMS &amp; Automation</a>
+        <a href="#hvac">HVAC Systems</a>
+        <a href="#medical-gas">Medical Gas</a>
+        <a href="#mep">MEP Engineering</a>
+      </div>
+    </span>
+    <span class="nav-item">Industries <span class="chevron"></span>
+      <div class="dropdown">
+        <a href="/industries/healthcare">Healthcare</a>
+        <a href="/industries/commercial">Commercial</a>
+      </div>
+    </span>
+    <a class="nav-item" href="/projects">Past Performance</a>
+    <a class="nav-item" href="/about">About</a>
+    <a class="btn-cta" href="contact.html">Request a Bid</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-accent"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">What We Do</div>
+    <h1>Integrated MEP<br>Engineering Services</h1>
+    <p class="hero-sub">From intelligent building controls to life-critical medical gas systems — we engineer the infrastructure that keeps your facility running safely and efficiently across Florida.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">Request a Bid</a>
+      <a href="/projects" class="btn-outline">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="intro-layout">
+    <div class="intro-text">
+      <div class="section-tag">Our Approach</div>
+      <h2>One Partner.<br>Four Disciplines.</h2>
+      <p>INTEG self-performs across all four MEP disciplines — mechanical, electrical, plumbing, and building automation — under a single contract. That means fewer coordination gaps, cleaner timelines, and one point of accountability from design through commissioning.</p>
+      <p>Our PreFab-first methodology and BIM coordination at LOD 350 reduce field risk and accelerate delivery without compromising quality or code compliance.</p>
+    </div>
+    <div class="disciplines-grid">
+      <div class="discipline-badge"><span>⚙️</span> Mechanical</div>
+      <div class="discipline-badge"><span>⚡</span> Electrical</div>
+      <div class="discipline-badge"><span>🔧</span> Plumbing</div>
+      <div class="discipline-badge"><span>🏢</span> BMS &amp; Automation</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 01 — BMS -->
+<section class="service-section bg-gray" id="bms">
+  <div class="service-layout">
+    <div class="service-content">
+      <span class="service-big-num">01</span>
+      <div class="section-tag">BMS &amp; Automation</div>
+      <h2>Building Management Systems</h2>
+      <p class="service-desc-text">Centralized intelligence for your entire facility. INTEG designs and installs integrated BMS platforms that give you real-time control over HVAC, lighting, access, and energy consumption — reducing operating costs while improving occupant comfort and system reliability.</p>
+      <ul class="feature-list">
+        <li>Centralized monitoring &amp; control dashboards</li>
+        <li>HVAC coordination and fault detection</li>
+        <li>Energy management and automated reporting</li>
+        <li>BIM coordination at MEP LOD 350</li>
+      </ul>
+      <a href="contact.html" class="service-cta-link">Request BMS Quote →</a>
+    </div>
+    <div class="service-visual">
+      <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+        <rect x="20" y="28" width="100" height="72" rx="6" stroke="#97c0e6" stroke-width="2"/>
+        <rect x="30" y="40" width="36" height="24" rx="3" fill="rgba(151,192,230,0.12)" stroke="#97c0e6" stroke-width="1.5"/>
+        <rect x="74" y="40" width="36" height="24" rx="3" fill="rgba(151,192,230,0.12)" stroke="#97c0e6" stroke-width="1.5"/>
+        <rect x="30" y="72" width="80" height="16" rx="3" fill="rgba(151,192,230,0.08)" stroke="#97c0e6" stroke-width="1.5"/>
+        <line x1="38" y1="80" x2="54" y2="80" stroke="#97c0e6" stroke-width="2" stroke-linecap="round"/>
+        <line x1="58" y1="80" x2="64" y2="80" stroke="rgba(151,192,230,0.4)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="48" cy="52" r="6" fill="#97c0e6" opacity="0.6"/>
+        <path d="M83 52 L86 56 L94 48" stroke="#97c0e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="92" cy="52" r="6" stroke="#97c0e6" stroke-width="1.5"/>
+        <line x1="70" y1="100" x2="70" y2="114" stroke="#97c0e6" stroke-width="2"/>
+        <rect x="50" y="114" width="40" height="6" rx="2" fill="rgba(151,192,230,0.25)" stroke="#97c0e6" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 02 — HVAC -->
+<section class="service-section bg-white" id="hvac">
+  <div class="service-layout reverse">
+    <div class="service-visual">
+      <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+        <circle cx="70" cy="70" r="42" stroke="#97c0e6" stroke-width="2"/>
+        <circle cx="70" cy="70" r="26" stroke="rgba(151,192,230,0.35)" stroke-width="1.5"/>
+        <circle cx="70" cy="70" r="9" fill="rgba(151,192,230,0.25)" stroke="#97c0e6" stroke-width="1.5"/>
+        <path d="M70 28 C62 44 62 70 70 70" stroke="#97c0e6" stroke-width="2" stroke-linecap="round"/>
+        <path d="M70 28 C78 44 78 70 70 70" stroke="#97c0e6" stroke-width="2" stroke-linecap="round"/>
+        <path d="M70 112 C62 96 62 70 70 70" stroke="rgba(151,192,230,0.4)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M70 112 C78 96 78 70 70 70" stroke="rgba(151,192,230,0.4)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M28 70 C44 62 70 62 70 70" stroke="#97c0e6" stroke-width="2" stroke-linecap="round"/>
+        <path d="M28 70 C44 78 70 78 70 70" stroke="rgba(151,192,230,0.4)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M112 70 C96 62 70 62 70 70" stroke="#97c0e6" stroke-width="2" stroke-linecap="round"/>
+        <path d="M112 70 C96 78 70 78 70 70" stroke="rgba(151,192,230,0.4)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="service-content">
+      <span class="service-big-num">02</span>
+      <div class="section-tag">HVAC Systems</div>
+      <h2>Heating, Ventilation &amp; Air Conditioning</h2>
+      <p class="service-desc-text">From high-rise residential to infection-control healthcare environments — INTEG delivers HVAC systems designed for performance, code compliance, and energy efficiency. We work with VRF/VRV, DOAS, chilled water, and split systems tailored to your specific project requirements.</p>
+      <ul class="feature-list">
+        <li>VRF / VRV system design &amp; installation</li>
+        <li>DOAS (Dedicated Outdoor Air Systems)</li>
+        <li>Chilled water &amp; split systems</li>
+        <li>ASHRAE &amp; NFPA compliant design</li>
+      </ul>
+      <a href="contact.html" class="service-cta-link">Request HVAC Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 03 — Medical Gas -->
+<section class="service-section bg-gray" id="medical-gas">
+  <div class="service-layout">
+    <div class="service-content">
+      <span class="service-big-num">03</span>
+      <div class="section-tag">Medical Gas</div>
+      <h2>Medical Gas Systems</h2>
+      <p class="service-desc-text">Life-critical infrastructure demands zero margin for error. INTEG engineers and installs NFPA 99-compliant medical gas piping systems for hospitals, ambulatory surgery centers, and clinical environments across Florida. Trusted by Jackson Health System across 8+ facilities.</p>
+      <ul class="feature-list">
+        <li>Oxygen, nitrogen &amp; vacuum systems</li>
+        <li>NFPA 99 compliant installation</li>
+        <li>Ambulatory surgery center systems</li>
+        <li>Hospital &amp; clinical environments</li>
+      </ul>
+      <a href="contact.html" class="service-cta-link">Request Medical Gas Quote →</a>
+    </div>
+    <div class="service-visual">
+      <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+        <rect x="50" y="16" width="40" height="22" rx="9" stroke="#97c0e6" stroke-width="2"/>
+        <rect x="40" y="36" width="60" height="76" rx="10" stroke="#97c0e6" stroke-width="2" fill="rgba(151,192,230,0.06)"/>
+        <line x1="70" y1="58" x2="70" y2="90" stroke="#97c0e6" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="54" y1="74" x2="86" y2="74" stroke="#97c0e6" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="70" cy="74" r="18" stroke="rgba(151,192,230,0.25)" stroke-width="1.5"/>
+        <circle cx="54" cy="48" r="4" fill="rgba(151,192,230,0.5)"/>
+        <circle cx="86" cy="48" r="4" fill="rgba(151,192,230,0.5)"/>
+        <rect x="56" y="96" width="28" height="8" rx="3" fill="rgba(151,192,230,0.18)" stroke="#97c0e6" stroke-width="1.2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 04 — MEP -->
+<section class="service-section bg-white" id="mep">
+  <div class="service-layout reverse">
+    <div class="service-visual">
+      <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+        <rect x="22" y="20" width="96" height="100" rx="4" stroke="rgba(151,192,230,0.25)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <rect x="32" y="30" width="76" height="60" rx="3" stroke="#97c0e6" stroke-width="1.5" fill="rgba(151,192,230,0.05)"/>
+        <line x1="32" y1="48" x2="108" y2="48" stroke="rgba(151,192,230,0.35)" stroke-width="1"/>
+        <line x1="32" y1="66" x2="108" y2="66" stroke="rgba(151,192,230,0.35)" stroke-width="1"/>
+        <line x1="58" y1="30" x2="58" y2="90" stroke="rgba(151,192,230,0.35)" stroke-width="1"/>
+        <line x1="88" y1="30" x2="88" y2="90" stroke="rgba(151,192,230,0.35)" stroke-width="1"/>
+        <circle cx="58" cy="48" r="5" fill="#97c0e6" opacity="0.85"/>
+        <circle cx="88" cy="66" r="5" fill="#97c0e6" opacity="0.85"/>
+        <rect x="42" y="30" width="10" height="5" rx="1" fill="rgba(151,192,230,0.45)"/>
+        <rect x="64" y="30" width="18" height="5" rx="1" fill="rgba(151,192,230,0.3)"/>
+        <path d="M36 100 L46 110 L56 100 L66 110 L76 100 L86 110 L96 100 L106 110" stroke="#97c0e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="service-content">
+      <span class="service-big-num">04</span>
+      <div class="section-tag">MEP Engineering</div>
+      <h2>Full-Scope MEP Engineering</h2>
+      <p class="service-desc-text">Mechanical, electrical, and plumbing engineering delivered under one roof. INTEG manages the full MEP scope from design-build coordination and energy modeling to construction documentation and commissioning — with PreFab integration to reduce schedule risk.</p>
+      <ul class="feature-list">
+        <li>Design-build &amp; construction documentation</li>
+        <li>Energy modeling &amp; Florida Building Code compliance</li>
+        <li>Pre-fabrication (PreFab) methodology</li>
+        <li>BIM coordination LOD 350</li>
+      </ul>
+      <a href="contact.html" class="service-cta-link">Request MEP Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREFAB SECTION -->
+<section class="prefab-section">
+  <div class="prefab-header">
+    <div class="section-tag">Our Differentiator</div>
+    <h2>The PreFab Advantage</h2>
+    <p>Our PreFab-first approach transforms how MEP systems are built — delivering better quality, less risk, and faster results on every project.</p>
+  </div>
+  <div class="prefab-grid">
+    <div class="prefab-card">
+      <div class="prefab-icon">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M5 14 L11 20 L23 8" stroke="#97c0e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="14" cy="14" r="11" stroke="#97c0e6" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>Quality Control</h3>
+      <p>Greater quality control of fabricated elements in a controlled environment before they reach the field — every time.</p>
+    </div>
+    <div class="prefab-card">
+      <div class="prefab-icon">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M14 3 L17.5 10 L25 11.2 L19.5 16.5 L20.9 24 L14 20.5 L7.1 24 L8.5 16.5 L3 11.2 L10.5 10 Z" stroke="#97c0e6" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Reduced Field Risk</h3>
+      <p>Less exposure to field errors, weather delays, and on-site coordination conflicts that slow projects and inflate costs.</p>
+    </div>
+    <div class="prefab-card">
+      <div class="prefab-icon">
+        <svg viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="10" stroke="#97c0e6" stroke-width="1.5"/>
+          <path d="M14 8 L14 14 L18 17" stroke="#97c0e6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Faster Delivery</h3>
+      <p>Faster installation and reduced final delivery time — keeping your project on schedule and your stakeholders satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-band">
+  <div class="section-tag">Start a Project</div>
+  <h2>Ready to Talk About Your MEP Scope?</h2>
+  <p>Tell us about your project and our engineering team will respond within one business day.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-primary">Request a Bid</a>
+    <a href="/projects" class="btn-outline">View Our Projects</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="footer-logo-wrap">
+        <img src="integ_logo.jpeg" alt="INTEG Integral Engineering" style="height:44px;width:auto;object-fit:contain;filter:brightness(0) invert(1);">
+      </a>
+      <p class="footer-tagline">Florida's MEP engineering specialists — HVAC, medical gas, plumbing &amp; BMS for healthcare, residential, and commercial construction.</p>
+      <a href="contact.html" style="font-size:12px;padding:8px 20px;border:2px solid rgba(151,192,230,0.5);color:var(--white);font-family:var(--font-head);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;display:inline-block;transition:all 0.2s;">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#bms">BMS &amp; Automation</a></li>
+        <li><a href="#hvac">HVAC Systems</a></li>
+        <li><a href="#medical-gas">Medical Gas</a></li>
+        <li><a href="#mep">MEP Engineering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About INTEG</a></li>
+        <li><a href="/about/team">Team</a></li>
+        <li><a href="/about/certifications">Certifications</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+13054681421">+1 (305) 468-1421</a></li>
+        <li><a href="mailto:support@integca.com">support@integca.com</a></li>
+        <li style="color:rgba(151,192,230,0.55);font-size:13px;font-family:var(--font-head);margin-top:8px;line-height:1.6;">15712 SW 41st St, Suite 14<br>Davie, FL 33331, USA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">&copy; 2025 INTEG Integral Engineering. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
